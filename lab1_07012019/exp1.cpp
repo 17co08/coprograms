@@ -1,31 +1,53 @@
 #include<iostream>
 using namespace std;
-void dectobin(double);
+void dectobin(int);
 int power(int ,int);
-void bintodec(double );
-int main()
+void bintodec(int );
+
+
+	void bintodec (int x)
+	{
+		int a,n,res;
+		a=x;
+		n=x;
+		int count=0;
+		while(a!=0)
+		{a=a/10;
+			count++;
+		}
+		while(n!=0)
+		{
+			n=n%10;
+			for(int i=0;i<=count;i++)
+			{
+				res=n*power(2,i);
+			}
+		}
+		cout<<"result"<<res;
+	}
+	int main()
 {
 	cout<<"Enter chice";
 	cout<<"1.deecimal to binary "<<endl<<"2.binary to decimal";
-	double n,x;
+	int n,x;
 	cin>>n;
 	cout<<"enter the number";
 	cin>>x;
 	if(n==1)
-	dectobin(double x);
-	
+	{ dectobin(x);
+    }
 	else
-	{ bintodec(double x);
+	{ bintodec(x);
 	}
     return 0;
 }
-	void dectobin(double x)
-	{  double i,a,res;
+	void dectobin(int x)
+	{  int a,res;
 		a=x;
 		res=0;
 		while(a!=0)
 		{
-			a=x%2;
+			a=a%2;
 			res=res*10+a;
 			a=a/10;
 		}
@@ -47,28 +69,3 @@ int main()
 		return po;
 	}
 }
-
-	void bintodec (double x)
-	{
-		double a,n,res;
-		a=x;
-		n=x;
-		count=0;
-		while(a!=0)
-		{a=a/10;
-			count++;
-		}
-		while(n!=0)
-		{
-			n=n%10;
-			for(i=0;i<=count;i++)
-			{
-				res=n*power(2,i);
-			}
-		}
-		cout<<"result"<<res;
-	}
-	
-			cout<<"helloo";
-			cout<<"test"
-			cout<<"test 2";
